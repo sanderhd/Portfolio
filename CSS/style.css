@@ -1,0 +1,395 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #0c0e10;
+  margin: 0;
+  padding: 25px;
+  height: 100%;
+  overflow: hidden;
+  color: white;
+  font-family: "Poppins";
+}
+
+.background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1; 
+}
+
+.background img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+h1 {
+  text-align: center;
+  color: white;
+  font-family: "Poppins";
+  font-size: 80px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  margin-top: 4%;
+  text-align: center;
+  position: relative;
+  z-index: 1; /* Zorgt ervoor dat de tekst boven de achtergrond staat */
+}
+
+h1 .wave {
+  animation-name: wave-animation;
+  animation-duration: 2.5s;
+  animation-iteration-count: infinite;
+  transform-origin: 70% 70%;
+  display: inline-block;
+}
+
+p {
+  color: #a1a3a7;
+  font-family: "Poppins";
+  font-weight: bolder;
+  font-size: 25px;
+  text-align: center;
+}
+
+.socials {
+  text-align: center;
+  margin-top: 30px;
+}
+
+.socials h2 {
+  color: white;
+  font-family: "Poppins", sans-serif;
+  font-weight: bold;
+  font-size: x-large;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  margin-bottom: 15px;
+}
+
+.socials a {
+  margin: 0 15px;
+  display: inline-block;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.socials a img {
+  width: 50px;
+  height: 50px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.socials a:hover img {
+  transform: scale(1.1);
+  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* From Uiverse.io by adamgiebl */ 
+button {
+  position: relative;
+  display: inline-block;
+  margin: 15px;
+  padding: 15px 30px;
+  text-align: center;
+  font-size: 15px;
+  letter-spacing: 1px;
+  text-decoration: none;
+  color: #0e76fd;
+  background: transparent;
+  cursor: pointer;
+  transition: ease-out 0.5s;
+  border: 2px solid #0e76fd;
+  border-radius: 10px;
+  box-shadow: inset 0 0 0 0 #0e76fd;
+}
+
+button:hover {
+  color: white;
+  box-shadow: inset 0 -100px 0 0 #0e76fd;
+}
+
+button:active {
+  transform: scale(0.9);
+}
+
+.center-buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center; 
+  margin-top: 30px; 
+}
+
+@keyframes wave-animation {
+  0% {
+    transform: rotate(0deg);
+  }
+  10% {
+    transform: rotate(14deg);
+  }
+  20% {
+    transform: rotate(-8deg);
+  }
+  30% {
+    transform: rotate(14deg);
+  }
+  40% {
+    transform: rotate(-4deg);
+  }
+  50% {
+    transform: rotate(10deg);
+  }
+  60% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+/* Projects */
+.projects {
+  margin-top: 2%;
+}
+
+.projects-grid {
+  display: flex;
+  justify-content: center;
+  flex-wrap: nowrap;
+  gap: 20px;
+  overflow-x: auto;
+  padding-bottom: 30px;
+}
+
+.project-card {
+  background-color: #0f1114;
+  border: 1px solid #a1a3a7;
+  border-radius: 12px;
+  padding: 20px;
+  text-align: center;
+  font-weight: bolder;
+  font-size: larger;
+  width: 500px;
+  height: 745px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  margin: 20px;
+}
+
+.project-card img {
+  width: 100%;
+  height: auto;
+  max-height: 250px;
+}
+
+.project-card h1 {
+  color: #a1a3a7;
+  font-family: "Poppins", sans-serif;
+  font-size: 35px;
+  text-align: left;
+}
+
+.project-card .info {
+  color: #a1a3a7;
+  font-family: "Poppins", sans-serif;
+  font-weight: normal;
+  font-size: 18px;
+  text-align: left;
+}
+
+.github img,
+.liveview img {
+  width: 150px;
+  height: auto;
+  display: block;
+  margin: 15px 0;
+  transition: transform 0.3s ease;
+}
+
+.github:hover,
+.liveview:hover {
+  transform: translateY(-5px);
+}
+
+/* About Me */
+.githubstats h2 {
+  color: #4b4d4e;
+  font-family: "Poppins", sans-serif;
+  font-size: 25px;
+  text-align: center;
+  margin-top: 10px;
+}
+
+.githubstats {
+  text-align: center;
+}
+
+/* Navbar */
+.menu-toggle {
+  cursor: pointer;
+  display: inline-block;
+  margin: 20px;
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  z-index: 10; 
+}
+
+.bar {
+  width: 25px;
+  height: 3px;
+  background-color: white;
+  margin: 5px;
+  transition: 0.3s;
+  z-index: 1;
+}
+
+nav {
+  background-color: #111214; 
+  width: 250px;
+  padding: 20px;
+  position: fixed;
+  height: 100vh;
+  top: 0;
+  left: -250px;
+  border: 1px solid #1b1c1e; 
+  border-radius: 10px; 
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.5); 
+  transition: left 0.3s ease; 
+  z-index: 9999;
+}
+
+nav.active {
+  left: 0; 
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  margin-bottom: 15px; 
+  position: relative; 
+}
+
+li a {
+  text-decoration: none;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  font-weight: 500;
+  font-size: 16px;
+  padding: 12px 20px; 
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
+}
+
+li a::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 2px; 
+  background-color: #00aaff;
+  left: 0; 
+  bottom: -5px; 
+  transform: scaleX(0); 
+  transition: transform 0.3s ease; 
+}
+
+li a:hover::after {
+  transform: scaleX(1); 
+}
+
+nav.active li a::after {
+  transform: scaleX(1); 
+}
+
+li a:hover {
+  background-color: #1b1c1e; 
+}
+
+li a i {
+  margin-right: 12px; 
+  font-size: 18px; 
+}
+
+/* Mobile view adjustments */
+@media (max-width: 768px) {
+  body {
+    padding: 15px;
+    overflow: auto; /* Zorgt ervoor dat er gescrold kan worden */
+  }
+
+  h1 {
+    font-size: 50px;
+    margin-top: 10%;
+  }
+
+  p {
+    font-size: 20px;
+  }
+
+  .socials a img {
+    width: 40px;
+    height: 40px;
+  }
+
+  .center-buttons {
+    flex-direction: column; /* Buttons stacked vertically */
+  }
+
+  .projects-grid {
+    flex-direction: column; /* Projects stacked vertically */
+    flex-wrap: nowrap; 
+    gap: 15px;
+    align-items: center;
+    overflow-y: auto; /* Zorgt ervoor dat de projecten gescrold kunnen worden */
+  }
+
+  .project-card {
+    width: 90%; /* Adjust width to fit smaller screens */
+    height: auto; /* Auto height for responsive scaling */
+    margin: 15px; /* Extra margin voor betere layout op mobiel */
+  }
+
+  .menu-toggle {
+    top: 15px;
+    left: 15px;
+  }
+
+  nav {
+    width: 100%;
+    left: -100%; /* Hidden off-screen for mobile */
+    height: auto;
+    box-shadow: none; /* Remove shadow for cleaner look */
+  }
+
+  nav.active {
+    left: 0; /* Full width navigation for mobile */
+  }
+
+  li a {
+    font-size: 14px;
+    padding: 10px 15px; /* Smaller padding for mobile */
+  }
+
+  .background img {
+    object-fit: cover;
+    height: auto;
+  }
+
+  /* GitHub section size control */
+  .githubstats h2 {
+    font-size: 20px; /* Kleiner font voor mobiel */
+  }
+
+  .githubstats {
+    max-width: 100%; /* Max breedte voor mobiel */
+    margin: 0 auto; /* Zorgt dat het gecentreerd blijft */
+    overflow-x: auto; /* Voeg horizontaal scrollen toe indien nodig */
+  }
+}
