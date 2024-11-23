@@ -9,7 +9,7 @@ body {
   margin: 0;
   padding: 25px;
   height: 100%;
-  overflow: hidden;
+  overflow: auto;
   color: white;
   font-family: "Poppins";
 }
@@ -33,12 +33,15 @@ h1 {
   text-align: center;
   color: white;
   font-family: "Poppins";
-  font-size: 80px;
+  font-size: 75px;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
   margin-top: 4%;
   text-align: center;
   position: relative;
-  z-index: 1; /* Zorgt ervoor dat de tekst boven de achtergrond staat */
+  z-index: 1;
+
+  animation-name: fade-animation;
+  animation-duration: 1s;
 }
 
 h1 .wave {
@@ -151,17 +154,51 @@ button:active {
   }
 }
 
+@keyframes fade-animation {
+  0% {
+    opacity: 0%;
+  }
+  25% {
+    opacity: 25%;
+  }
+  50% {
+    opacity: 50%;
+  }
+  75% {
+    opacity: 75%;
+  }
+  100% {
+    opacity: 100%;
+  }
+}
+
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: blue; }
+}
+
 /* Projects */
 .projects {
   margin-top: 2%;
+  text-align: center; /* Center the header */
+}
+
+.projects-header {
+  font-size: 36px; /* Set the font size for the header */
+  margin-bottom: 20px; /* Space below the header */
+  color: white; /* Text color */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Optional shadow */
 }
 
 .projects-grid {
-  display: flex;
-  justify-content: center;
-  flex-wrap: nowrap;
-  gap: 20px;
-  overflow-x: auto;
+  display: grid; /* Use grid layout for better control */
+  grid-template-columns: repeat(3, 1fr); /* Three columns */
+  gap: 20px; /* Space between cards */
   padding-bottom: 30px;
 }
 
@@ -173,10 +210,21 @@ button:active {
   text-align: center;
   font-weight: bolder;
   font-size: larger;
-  width: 500px;
-  height: 745px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
   margin: 20px;
+  animation-name: fade-animation;
+  animation-duration: 1s;
+}
+
+.github {
+  text-align: left; /* Align GitHub section to the left */
+  margin-top: 10px; /* Space above the GitHub section */
+}
+
+.github h3 {
+  font-size: 18px; /* Font size for the GitHub header */
+  color: #a1a3a7; /* Color for the header */
+  margin-bottom: 5px; /* Space below the header */
 }
 
 .project-card img {
@@ -200,31 +248,98 @@ button:active {
   text-align: left;
 }
 
-.github img,
-.liveview img {
-  width: 150px;
+.github img {
+  width: 40px;
   height: auto;
-  display: block;
-  margin: 15px 0;
+  display: inline-block;
+  margin-right: 10px;
   transition: transform 0.3s ease;
 }
 
-.github:hover,
-.liveview:hover {
+.github img:hover {
   transform: translateY(-5px);
 }
 
 /* About Me */
-.githubstats h2 {
-  color: #4b4d4e;
-  font-family: "Poppins", sans-serif;
-  font-size: 25px;
+/* Interests Section */
+.interests {
+  margin-top: 40px;
+  padding: 20px;
+  color: white;
   text-align: center;
-  margin-top: 10px;
 }
 
-.githubstats {
+.interests h2 {
+  font-size: 36px;
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+.interests p {
+  font-size: 20px;
+  line-height: 1.6;
+  color: #a1a3a7;
+}
+
+.languages {
+  text-align: center; /* Center the text */
+  margin-top: 40px; /* Add some spacing from the previous section */
+}
+
+.languages h2 {
+  margin-bottom: 40px; /* Increase the gap between the title and the languages grid */
+  font-size: 36px; /* Ensure the font size matches the Interests title */
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5); /* Optional: add shadow for consistency */
+}
+
+.languages-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); /* Responsive grid */
+  gap: 20px; /* Space between grid items */
+  margin: 0 auto; /* Center the grid */
+  max-width: 800px; /* Set a maximum width for the grid */
+}
+
+.language-card {
+  background-color: #1e1e1e;
+  border-radius: 8px;
+  padding: 15px;
   text-align: center;
+  transition: transform 0.3s;
+}
+
+.language-card:hover {
+  transform: scale(1.05);
+}
+
+.language-icon {
+  width: 50px; /* Adjust size as needed */
+  height: auto;
+  margin-bottom: 10px;
+}
+
+.github-stats {
+  text-align: center; /* Center the content */
+  margin-top: 40px; /* Space above the GitHub stats section */
+}
+
+.github-stats h2 {
+  color: white;
+  font-family: "Poppins", sans-serif;
+  font-weight: bold;
+  font-size: 24px; /* Adjust size as needed */
+  margin-bottom: 20px; /* Space below the header */
+}
+
+.github-stat-image {
+  width: 80%; /* Make images responsive and smaller */
+  max-width: 400px; /* Set a maximum width for the images */
+  height: auto; /* Maintain aspect ratio */
+  border-radius: 10px; /* Optional: round corners */
+  margin: 10px 0; /* Space between images */
+  background-color: #1e1e1e; /* Background color to match theme */
+  padding: 10px; /* Padding to give some space around the image */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Optional: shadow for depth */
 }
 
 /* Navbar */
@@ -293,7 +408,7 @@ li a::after {
   position: absolute;
   width: 100%;
   height: 2px; 
-  background-color: #00aaff;
+  background-color: #0e76fd;
   left: 0; 
   bottom: -5px; 
   transform: scaleX(0); 
