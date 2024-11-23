@@ -436,7 +436,7 @@ li a i {
 @media (max-width: 768px) {
   body {
     padding: 15px;
-    overflow: auto; /* Zorgt ervoor dat er gescrold kan worden */
+    overflow: auto; /* Allows scrolling */
   }
 
   h1 {
@@ -458,17 +458,17 @@ li a i {
   }
 
   .projects-grid {
-    flex-direction: column; /* Projects stacked vertically */
-    flex-wrap: nowrap; 
-    gap: 15px;
-    align-items: center;
-    overflow-y: auto; /* Zorgt ervoor dat de projecten gescrold kunnen worden */
+    display: flex; /* Use flexbox for layout */
+    flex-direction: column; /* Stack items vertically */
+    gap: 15px; /* Space between project cards */
+    align-items: center; /* Center align the items */
+    overflow-y: auto; /* Allow scrolling if necessary */
   }
 
   .project-card {
     width: 90%; /* Adjust width to fit smaller screens */
     height: auto; /* Auto height for responsive scaling */
-    margin: 15px; /* Extra margin voor betere layout op mobiel */
+    margin: 15px; /* Extra margin for better layout on mobile */
   }
 
   .menu-toggle {
@@ -499,12 +499,12 @@ li a i {
 
   /* GitHub section size control */
   .githubstats h2 {
-    font-size: 20px; /* Kleiner font voor mobiel */
+    font-size: 20px; /* Smaller font for mobile */
   }
 
   .githubstats {
-    max-width: 100%; /* Max breedte voor mobiel */
-    margin: 0 auto; /* Zorgt dat het gecentreerd blijft */
-    overflow-x: auto; /* Voeg horizontaal scrollen toe indien nodig */
+    max-width: 100%; /* Max width for mobile */
+    margin: 0 auto; /* Center the content */
+    overflow-x: auto; /* Allow horizontal scrolling if needed */
   }
 }
