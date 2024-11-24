@@ -1,16 +1,3 @@
 {
-    "version": 2,
-    "rewrites": [
-      {
-        "source": "/:path*",
-        "has": [
-          {
-            "type": "filesystem",
-            "value": ".html"
-          }
-        ],
-        "destination": "/:path*.html"
-      }
-    ]
-  }
-  
+  "cleanUrls": true
+}
